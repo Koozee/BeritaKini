@@ -1,10 +1,10 @@
-import Header from '../../layouts/Header/Header'
-import Footer from '../../layouts/Footer/Footer'
-import ContentNews from '../../layouts/ContentNews/ContentNews'
-import Comment from '../../layouts/Comment/Comment'
-import { useFetchRecentNews } from "../../../hooks/useFetchRecentNews"
-import CardNews from "../../fragments/CardNews/CardNews";
-import TittleSection from '../../fragments/Tittle/TittleSection'
+import Header from '../../components/layouts/Header/Header'
+import Footer from '../../components/layouts/Footer/Footer'
+import ContentNews from '../../components/layouts/ContentNews/ContentNews'
+import Comment from '../../components/layouts/Comment/Comment'
+import { useFetchRecentNews } from "../../hooks/useFetchRecentNews"
+import CardNews from "../../components/fragments/CardNews/CardNews";
+import TittleSection from '../../components/fragments/Tittle/TittleSection'
 
 const NewsPage = () => {
     // get data from hooks
@@ -16,24 +16,26 @@ const NewsPage = () => {
     return (
         <>
             <Header />
-            <article className='px-20'>
-                <div className='flex justify-between'>
-                    <div className='w-[65%]'>
+            <main className='relative top-28 lg:top-16 p-7 lg:p-20 z-0'>
+                <div className='lg:flex justify-between'>
+                    <div className='lg:w-[65%]'>
                         <ContentNews />
                         <Comment />
-                        <TittleSection name={"Berita Terkait"} />
-                        <div className='grid grid-cols-3'>
-                            {currentPost.map(item =>
-                                <CardNews key={item.link} news={item} />
-                            )}
+                        <div className='mt-32'>
+                            <div className='flex justify-between mb-8'>
+                                <TittleSection name={"Berita Terkait"} />
+                                <button className='w-max font-medium py-3 px-4 lg:py-[14px] lg:px-5 border-2 border-sky-600/80 bg-sky-300/30 text-sky-600 rounded-lg hover:bg-sky-300/50'>Lihat Semua</button>
+                            </div>
+                            <div className='relative md:grid grid-cols-3 gap-6'>
+                                {currentPost.map(item =>
+                                    <CardNews key={item.link} news={item} category={"Nasional"} />
+                                )}
+                            </div>
                         </div>
                     </div>
 
-                    <article className='w-[25%]'>
-                        <div className='flex items-center gap-4'>
-                            <div className='bg-blue-600 w-[5px] h-10 rounded-3xl'></div>
-                            <h2 className='font-bold text-2xl'>Berita Terpopuler</h2>
-                        </div>
+                    <article className='hidden lg:block lg:w-[30%] 2xl:w-[25%]'>
+                        <TittleSection name={"Berita Terpopuler"} />
                         {/* wrapper */}
                         <div className='mt-10'>
                             <div className='flex flex-col justify-between gap-10'>
@@ -43,7 +45,7 @@ const NewsPage = () => {
                                     <img className='rounded-2xl' src="/img/berita1.png" alt="" />
                                     <div className='relative h-full'>
                                         <p className='font-semibold text-base w-[80%]'>Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?</p>
-                                        <div className='flex items-center gap-3'>
+                                        <div className='flex items-center gap-3 pt-6'>
                                             <a className='text-blue-500 font-bold' href="">Politik</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
@@ -58,7 +60,7 @@ const NewsPage = () => {
                                     <img className='rounded-2xl' src="/img/berita2.png" alt="" />
                                     <div className='relative h-full'>
                                         <p className='font-semibold text-base w-[80%]'>Daftar 6 Lahan Tambang Jatah Ormas Agama, NU Dapat Bekas Grup Bakrie</p>
-                                        <div className='flex items-center gap-3'>
+                                        <div className='flex items-center gap-3 pt-6'>
                                             <a className='text-blue-500 font-bold' href="">Nasional</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
@@ -73,7 +75,7 @@ const NewsPage = () => {
                                     <img className='rounded-2xl' src="/img/berita3.png" alt="" />
                                     <div className='relative h-full'>
                                         <p className='font-semibold text-base w-[80%]'>Kementerian BUMN Mulai Uji Coba Pegawai Kerja 4 Hari Sepekan</p>
-                                        <div className='flex items-center gap-3'>
+                                        <div className='flex items-center gap-3 pt-6'>
                                             <a className='text-blue-500 font-bold' href="">Nasional</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
@@ -85,7 +87,7 @@ const NewsPage = () => {
                         </div>
                     </article>
                 </div>
-            </article>
+            </main>
             <Footer />
         </>
     )

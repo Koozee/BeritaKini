@@ -5,7 +5,7 @@ const Comment = () => {
         <div className='flex flex-col gap-6'>
             <TittleSection name={"Komentar"} />
             <div className='flex flex-col gap-4'>
-                <div className='border-b-2 py-6 pr-10'>
+                <div className='border-b-2 py-6 lg:pr-10'>
                     <div className='flex gap-7 pl-5 w-full'>
                         <img className='rounded-lg w-14 h-14' src="/userImg/user1.png" alt="user1" />
                         <form className='w-full h-full' action="">
@@ -27,23 +27,23 @@ const Comment = () => {
                         <div className='flex gap-7 pl-5 w-full'>
                             <img className='rounded-lg w-14 h-14' src="/userImg/user2.png" alt="user2" />
                             <div className='flex flex-col gap-3'>
-                                <div className='flex items-center gap-4'>
-                                    <p className='text-gray-600 font-semibold'>UJANG YUSMEIDI S.P., M.Agr.</p>
-                                    <div className='w-[5px] h-[5px] bg-gray-400 rounded-full'></div>
+                                <div className='flex flex-col lg:flex-row lg:items-center gap-4'>
+                                    <p className='text-gray-600 font-semibold text-sm lg:text-base'>UJANG YUSMEIDI S.P., M.Agr.</p>
+                                    <div className='w-[5px] h-[5px] bg-gray-400 rounded-full hidden lg:block'></div>
                                     <p className='text-gray-400'>28 Mar 2024 11:15</p>
                                 </div>
-                                <p className='text-lg'>Mohon maaf, apakah sertifikatnya sudah tidak dapat diunduh ? Karena saya mau download ada konfirmasi bahwa TOTP aktivasi salah Bagaimana ya solusinya ?</p>
+                                <p className='lg:text-lg'>Mohon maaf, apakah sertifikatnya sudah tidak dapat diunduh ? Karena saya mau download ada konfirmasi bahwa TOTP aktivasi salah Bagaimana ya solusinya ?</p>
                                 <button className='w-max text-blue-500 font-bold'>Balas</button>
                             </div>
                         </div>
                     </div>
-                    <div className='pr-10 pl-20'>
+                    <div className='pr-10 pl-5 lg:pl-20'>
                         <div className='flex gap-7 pl-5 w-full'>
                             <img className='rounded-lg w-14 h-14' src="/userImg/user3.png" alt="user3" />
                             <div className='flex flex-col gap-3'>
-                                <div className='flex items-center gap-4'>
-                                    <p className='text-gray-600 font-semibold'>DINA RIKHA RIYANAWATI, S.Pd</p>
-                                    <div className='w-[5px] h-[5px] bg-gray-400 rounded-full'></div>
+                                <div className='flex flex-col lg:flex-row lg:items-center gap-4'>
+                                    <p className='text-gray-600 font-semibold text-sm lg:text-base'>DINA RIKHA RIYANAWATI, S.Pd</p>
+                                    <div className='w-[5px] h-[5px] bg-gray-400 rounded-full hidden lg:block'></div>
                                     <p className='text-gray-400'>28 Mar 2024 11:15</p>
                                 </div>
                                 <p className='text-lg'>saya mengunduh sertifikatnya kok juga belumbisa</p>
@@ -54,7 +54,7 @@ const Comment = () => {
                 </div>
 
                 {/* pagination  */}
-                <div className='flex justify-between'>
+                <div className='flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-0'>
                     <div className='flex items-center gap-4 font-medium'>
                         <div>Item per page </div>
                         <select className='border-b-2 h-10 w-11' name="" id="">

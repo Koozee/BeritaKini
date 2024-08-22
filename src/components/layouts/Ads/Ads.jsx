@@ -1,6 +1,6 @@
 const Ads = () => {
     return (
-        <section className='px-20'>
+        <section className='mt-10 p-7 lg:p-20'>
             <div className='container mx-auto'>
                 <img className='mx-auto' src="/img/bannerADS.png" alt="ads" />
             </div>

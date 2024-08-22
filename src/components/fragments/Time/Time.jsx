@@ -1,7 +1,7 @@
 const Time = (props) => {
     const { name } = props;
     return (
-        <p className="font-medium text-gray-600">{name}</p>
+        <p className="font-medium text-gray-600 text-sm lg:text-base">{name}</p>
     )
 }
 

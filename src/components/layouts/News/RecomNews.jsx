@@ -16,17 +16,17 @@ const RecomNews = () => {
     let firstPostIndex = lastPostIndex - postPerPage
     let currentPost = recentNews.slice(firstPostIndex, lastPostIndex)
     return (
-        <section className='p-20 mx-auto'>
-            <div className='flex items-center justify-between mr-10'>
+        <section className='p-7 lg:p-20 mx-auto'>
+            <div className='flex items-center justify-between lg:mr-10'>
                 <TittleSection name={"Rekomendasi Untuk Anda"} />
                 <Search />
             </div>
 
             {/* wrapper */}
             <article className='mt-10'>
-                <div className='grid grid-cols-4 gap-10'>
+                <div className='lg:grid lg:grid-cols-4 gap-5 lg:gap-16'>
                     {currentPost.map((item =>
-                        <CardNews key={item.link} news={item} />
+                        <CardNews key={item.link} news={item} category={"Nasional"}/>
                     ))}
                 </div>
             </article>
