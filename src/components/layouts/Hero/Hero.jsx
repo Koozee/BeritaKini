@@ -3,7 +3,7 @@ import Time from "../../fragments/Time/Time"
 
 const Hero = () => {
     return (
-        <main className='h-screen flex flex-col items-center justify-center p-7 lg:p-20 mx-auto relative top-20 md:top-40 lg:top-0'>
+        <main className='h-screen flex flex-col items-center justify-center p-7 lg:p-20 mx-auto relative sm:top-20'>
             <div className='flex flex-col lg:flex-row justify-between gap-10'>
                 <article className='lg:w-2/5 flex flex-col gap-7'>
                     <h3 className='font-semibold'>Headline</h3>
