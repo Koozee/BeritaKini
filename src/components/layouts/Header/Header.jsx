@@ -46,9 +46,9 @@ const Header = () => {
         <>
             <header className={`z-50 fixed w-full bg-white border-b-2 px-7 lg:px-[72px] py-8 transition-all duration-200 ease-in-out ${showNavbar ? `transform translate-y-0` : 'transform -translate-y-full'}`}>
                 <div className='flex items-center justify-between'>
-                    <a className="mr-20" href="#">
+                    <Link className="mr-20" to="/">
                         <img src="/img/logoHeader.png" alt="" />
-                    </a>
+                    </Link>
                     <Navbar />
                     <button onClick={toogleNavbar} className="block z-50 lg:hidden">
                         {isOpen ? <X size={36} /> : <Menu size={36} />}
