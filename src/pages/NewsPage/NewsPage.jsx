@@ -5,6 +5,7 @@ import Comment from '../../components/layouts/Comment/Comment'
 import { useFetchRecentNews } from "../../hooks/useFetchRecentNews"
 import CardNews from "../../components/fragments/CardNews/CardNews";
 import TittleSection from '../../components/fragments/Tittle/TittleSection'
+import { Link } from 'react-router-dom'
 
 const NewsPage = () => {
     // get data from hooks
@@ -40,48 +41,48 @@ const NewsPage = () => {
                         <div className='mt-10'>
                             <div className='flex flex-col justify-between gap-10'>
 
-                                <div className='relative flex gap-3'>
+                                <Link to={''} className='relative flex gap-3'>
                                     <div className="bg-black/80 text-white rounded-full w-4 h-4 p-4 flex items-center justify-center absolute -top-3 -left-3">1</div>
-                                    <img className='rounded-2xl' src="/img/berita1.png" alt="" />
+                                    <img className='w-1/3 h-1/3 rounded-2xl' src="/img/berita1.png" alt="" />
                                     <div className='relative h-full'>
-                                        <p className='font-semibold text-base w-[80%]'>Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?</p>
-                                        <div className='flex items-center gap-3 pt-6'>
+                                        <p className='font-semibold text-base w-[85%]'>Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?</p>
+                                        <div className='flex items-center gap-3 pt-3'>
                                             <a className='text-blue-500 font-bold' href="">Politik</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
 
                                 <div className='bg-gray-200 h-[1px]'></div>
 
-                                <div className='relative flex gap-3'>
+                                <Link to={''} className='relative flex gap-3'>
                                     <div className="bg-black/80 text-white rounded-full w-4 h-4 p-4 flex items-center justify-center absolute -top-3 -left-3">2</div>
-                                    <img className='rounded-2xl' src="/img/berita2.png" alt="" />
+                                    <img className='w-1/3 h-1/3 rounded-2xl' src="/img/berita2.png" alt="" />
                                     <div className='relative h-full'>
-                                        <p className='font-semibold text-base w-[80%]'>Daftar 6 Lahan Tambang Jatah Ormas Agama, NU Dapat Bekas Grup Bakrie</p>
-                                        <div className='flex items-center gap-3 pt-6'>
+                                        <p className='font-semibold text-base w-[85%]'>Daftar 6 Lahan Tambang Jatah Ormas Agama, NU Dapat Bekas Grup Bakrie</p>
+                                        <div className='flex items-center gap-3 pt-3'>
                                             <a className='text-blue-500 font-bold' href="">Nasional</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
 
                                 <div className='bg-gray-200 h-[1px]'></div>
 
-                                <div className='relative flex gap-3'>
+                                <Link to={''} className='relative flex gap-3'>
                                     <div className="bg-black/80 text-white rounded-full w-4 h-4 p-4 flex items-center justify-center absolute -top-3 -left-3">3</div>
-                                    <img className='rounded-2xl' src="/img/berita3.png" alt="" />
+                                    <img className='w-1/3 h-1/3 rounded-2xl' src="/img/berita3.png" alt="" />
                                     <div className='relative h-full'>
-                                        <p className='font-semibold text-base w-[80%]'>Kementerian BUMN Mulai Uji Coba Pegawai Kerja 4 Hari Sepekan</p>
-                                        <div className='flex items-center gap-3 pt-6'>
+                                        <p className='font-semibold text-base w-[85%]'>Kementerian BUMN Mulai Uji Coba Pegawai Kerja 4 Hari Sepekan</p>
+                                        <div className='flex items-center gap-3 pt-3'>
                                             <a className='text-blue-500 font-bold' href="">Nasional</a>
                                             <div className='self-center rounded-full w-1 h-1 bg-gray-400'></div>
                                             <p>22 Jan 2024</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
 
                             </div>
                         </div>

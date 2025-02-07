@@ -38,9 +38,9 @@ const Footer = () => {
                     <p className='font-medium text-xl'>Telusuri</p>
                     <ul className='flex flex-col gap-3 mt-5'>
                         <li><Link to="/">Beranda</Link></li>
-                        <li><Link to="/hiburan-categories">Hiburan</Link></li>
-                        <li><Link to="/teknologi-categories">Teknologi</Link></li>
-                        <li><Link to="/ekonomi-categories">Ekonomi</Link></li>
+                        <li><Link to="/hiburan-categories">Kesehatan</Link></li>
+                        <li><Link to="/teknologi-categories">Otomotif</Link></li>
+                        <li><Link to="/ekonomi-categories">Politik</Link></li>
                         <li><Link to="/olahraga-categories">Olahraga</Link></li>
                         <li><Link to="/nasional-categories">Nasional</Link></li>
                         <li><Link to="/internasional-categories">Internasional</Link></li>
@@ -55,7 +55,7 @@ const Footer = () => {
                     </ul>
                 </nav>
                 <div className='hidden lg:block w-[20%]'>
-                    <p className='text-white text-xl mb-7'>Berlangganan Berita Terbaru</p>
+                    <p className='text-white 2xl:text-lg mb-7'>Berlangganan Berita Terbaru</p>
                     <form action="">
                         <div className='bg-white p-2 rounded-lg flex justify-between'>
                             <input className='bg-transparent focus:outline-0 w-[80%]' type="email" name="" id="" placeholder='Masukan Email' required />

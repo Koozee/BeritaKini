@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
-import { hiburanNewsApi } from '../api/hiburanNewsApi';
 import { formatDate } from '../utils/formatDate';
+import { getNewsApi } from '../api/getNewsApi';
 
-export const useFetchHiburanNews = () => {
-    const [hiburanNews, setHiburanNews] = useState([]);
+export const useFetchEkonomiNews = () => {
+    const [ekonomiNews, setEkonomiNews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const getNews = async () => {
             try {
-                const newsData = await hiburanNewsApi();
+                const newsData = await getNewsApi("ekonomi");
                 const modifiedNews = newsData.data.posts.map((item) => ({
                     ...item,
-                    formattedDate: formatDate(item.pubDate) // Format tanggal di sini
+                    formattedDate: formatDate(item.pubDate) // menambah format tanggal 
                 }));
-                setHiburanNews(modifiedNews);
+                setEkonomiNews(modifiedNews);
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -26,5 +26,5 @@ export const useFetchHiburanNews = () => {
         getNews();
     }, []);
 
-    return { hiburanNews, loading, error };
+    return { ekonomiNews, loading, error };
 };

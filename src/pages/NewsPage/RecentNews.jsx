@@ -2,10 +2,10 @@ import TittleSection from "../../components/fragments/Tittle/TittleSection"
 import Footer from "../../components/layouts/Footer/Footer"
 import Header from "../../components/layouts/Header/Header"
 import CardNews from "../../components/fragments/CardNews/CardNews";
-import { useFetchEkonomiNews } from "../../hooks/useFetchEkonomiNews"
-const EkonomiNews = () => {
+import { useFetchRecentNews } from "../../hooks/useFetchRecentNews";
+const RecentNews = () => {
     // get data from hooks
-    const { ekonomiNews, error, loading } = useFetchEkonomiNews()
+    const { recentNews, error, loading } = useFetchRecentNews()
     if (loading) {
         return (
             <div className="absolute top-1/2 left-1/2 text-center">
@@ -21,17 +21,17 @@ const EkonomiNews = () => {
     let postPerPage = 8
     let lastPostIndex = currentPage * postPerPage
     let firstPostIndex = lastPostIndex - postPerPage
-    let currentPost = ekonomiNews.slice(firstPostIndex, lastPostIndex)
+    let currentPost = recentNews.slice(firstPostIndex, lastPostIndex)
 
     return (
         <>
             <Header />
             <main className="h-full relative top-32 p-7 lg:p-20">
-                <TittleSection name={"Ekonomi"} />
+                <TittleSection name={"Terbaru"} />
                 <article className='mt-10'>
                     <div className='lg:grid grid-cols-4 gap-16'>
                         {currentPost.map((item =>
-                            <CardNews key={item.link} news={item} category={"ekonomi"} />
+                            <CardNews key={item.link} news={item} category={"Nasional"} />
                         ))}
                     </div>
                 </article>
@@ -41,4 +41,4 @@ const EkonomiNews = () => {
     )
 }
 
-export default EkonomiNews
+export default RecentNews

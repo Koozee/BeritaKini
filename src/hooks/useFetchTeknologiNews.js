@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
-import { nasionalNewsApi } from '../api/nasionalNewsApi';
 import { formatDate } from '../utils/formatDate';
+import { getNewsApi } from '../api/getNewsApi';
 
-export const useFetchNasionalNews = () => {
-    const [nasionalNews, setNasionalNews] = useState([]);
+export const useFetchTeknologiNews = () => {
+    const [teknologiNews, setTeknologiNews] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const getNews = async () => {
             try {
-                const newsData = await nasionalNewsApi();
+                const newsData = await getNewsApi("teknologi");
                 const modifiedNews = newsData.data.posts.map((item) => ({
                     ...item,
                     formattedDate: formatDate(item.pubDate) // Format tanggal di sini
                 }));
-                setNasionalNews(modifiedNews);
+                setTeknologiNews(modifiedNews);
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -26,5 +26,5 @@ export const useFetchNasionalNews = () => {
         getNews();
     }, []);
 
-    return { nasionalNews, loading, error };
+    return { teknologiNews, loading, error };
 };

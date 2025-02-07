@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { olahragaNewsApi } from '../api/olahragaNewsApi';
 import { formatDate } from '../utils/formatDate';
+import { getNewsApi } from '../api/getNewsApi';
 
 export const useFetchOlahragatNews = () => {
     const [olahragaNews, setOlahragaNews] = useState([]);
@@ -10,7 +10,7 @@ export const useFetchOlahragatNews = () => {
     useEffect(() => {
         const getNews = async () => {
             try {
-                const newsData = await olahragaNewsApi();
+                const newsData = await getNewsApi("olahraga");
                 const modifiedNews = newsData.data.posts.map((item) => ({
                     ...item,
                     formattedDate: formatDate(item.pubDate) // Format tanggal di sini

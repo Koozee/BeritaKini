@@ -9,16 +9,20 @@ import HomePage from './pages/Home/HomePage.jsx'
 import HiburanNews from './pages/NewsPage/HiburanNews.jsx'
 import GayaHidupNews from './pages/NewsPage/GayaHidupNews.jsx'
 import OlahragaNews from './pages/NewsPage/OlahragaNews.jsx'
-import EkonomiNews from './pages/NewsPage/EkonomiNews.jsx'
 import TeknologiNews from './pages/NewsPage/TeknologiNews.jsx'
 import NasionalNews from './pages/NewsPage/NasionalNews.jsx'
 import InternasionalNews from './pages/NewsPage/InternasionalNews.jsx'
 import NewsPage from './pages/NewsPage/NewsPage.jsx'
+import RecentNews from './pages/NewsPage/RecentNews.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />
+  },
+  {
+    path: "/terbaru",
+    element: <RecentNews />
   },
   {
     path: "/hiburan-categories",
@@ -31,10 +35,6 @@ const router = createBrowserRouter([
   {
     path: "/olahraga-categories",
     element: <OlahragaNews />
-  },
-  {
-    path: "/ekonomi-categories",
-    element: <EkonomiNews />
   },
   {
     path: "/teknologi-categories",
